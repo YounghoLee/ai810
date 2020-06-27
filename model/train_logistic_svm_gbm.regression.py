@@ -77,7 +77,7 @@ test_x  = testMeanArrays[:,:-1]
 train_shock_y = np.array(trainShockArray)
 test_shock_y = np.array(testShockArray)
 train_mortality_y = np.array(trainMortality)
-test_smortality_y = np.array(testMortality)
+test_mortality_y = np.array(testMortality)
 
 ## Logistic Regression
 lr = LogisticRegression(C=100.0, random_state=0, max_iter = 1000000, solver = 'saga')
@@ -97,8 +97,8 @@ pred_test_y = lr.predict(test_x)
 print("Logistic Regression mortality")
 print(roc_auc_score(train_mortality_y, pred_train_y))
 print(average_precision_score(train_mortality_y, pred_train_y))
-print(roc_auc_score(test_smortality_y, pred_test_y))
-print(average_precision_score(test_smortality_y, pred_test_y))
+print(roc_auc_score(test_mortality_y, pred_test_y))
+print(average_precision_score(test_mortality_y, pred_test_y))
 
 ## SVM
 regr = svm.SVR()
@@ -118,8 +118,8 @@ pred_test_y = regr.predict(test_x)
 print("svm mortality")
 print(roc_auc_score(train_mortality_y, pred_train_y))
 print(average_precision_score(train_mortality_y, pred_train_y))
-print(roc_auc_score(test_smortality_y, pred_test_y))
-print(average_precision_score(test_smortality_y, pred_test_y))
+print(roc_auc_score(test_mortality_y, pred_test_y))
+print(average_precision_score(test_mortality_y, pred_test_y))
 
 ## GBM
 params = {'n_estimators': 500,
@@ -145,5 +145,5 @@ pred_test_y = reg.predict(test_x)
 print("gbm mortality")
 print(roc_auc_score(train_mortality_y, pred_train_y))
 print(average_precision_score(train_mortality_y, pred_train_y))
-print(roc_auc_score(test_smortality_y, pred_test_y))
-print(average_precision_score(test_smortality_y, pred_test_y))
+print(roc_auc_score(test_mortality_y, pred_test_y))
+print(average_precision_score(test_mortality_y, pred_test_y))
