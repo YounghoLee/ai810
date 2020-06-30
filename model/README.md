@@ -8,8 +8,8 @@
     * Y : shock, mortality
 
 ## Train / Test
-* trainData : 2857
-* testData  : 711
+* trainData : 2857 / 1210 ( shock ) / 1946 ( mortality )
+* testData  : 711 / 239 ( shock ) / 487 ( mortality )
 
 ## Sample
 ```
